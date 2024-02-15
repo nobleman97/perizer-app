@@ -1,9 +1,9 @@
 rg_name  = "rg-k8s-dev-eastus2-1"
 rg_location = "eastus2"
 
-azuread_app_name = "spn-k8s-dev-eastus2-1"
+# azuread_app_name = "spn-k8s-dev-eastus2-1"
 
-kv_name = "raven-k8s-key-vault"
+# kv_name = "raven-k8s-key-vault"
 
 aks-name = "aks-stream-dev-eastus2-1"
 
