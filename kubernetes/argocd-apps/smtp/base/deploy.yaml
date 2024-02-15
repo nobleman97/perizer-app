@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: smtp
+  namespace: raven
+  labels:
+    app: smtp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smtp
+  template:
+    metadata:
+      labels:
+        app: smtp
+    spec:
+      containers:
+      - name: smtp
+        image: ravendvd3232.azurecr.io/smtp:latest
+        ports:
+        - name: smtp
+          containerPort: 8080
+        envFrom:
+          - configMapRef:
+              name: smtp-configmap
+        resources:
+          requests:
+            cpu: 200m
+          limits:
+            cpu: 500m
+        

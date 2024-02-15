@@ -1,0 +1,1 @@
+{"Modules":[{"Key":"aks","Source":"./modules/aks","Dir":"modules/aks"},{"Key":"vmss-identity","Source":"./modules/identities","Dir":"modules/identities"},{"Key":"service_principal","Source":"./modules/servicePrincipal","Dir":"modules/servicePrincipal"},{"Key":"","Source":"","Dir":"."},{"Key":"key_vault","Source":"./modules/keyVault","Dir":"modules/keyVault"}]}

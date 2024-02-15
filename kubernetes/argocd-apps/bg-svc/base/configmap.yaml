@@ -1,0 +1,53 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata: 
+  name: bg-svc-configmap
+  namespace: raven
+data:
+  PORT: "8080"
+# - NODE_ENV: production
+  NODE_ENV: development
+  BASE_URL: https://ravenlivestream-api.com
+  INSTANCE_PUBLIC_IP: $publicIpAddress
+  ADMIN_IDS: 60902d05d786ee7f2c2181c7
+  AGORA_APP_CERTIFICATE: 3889697a1be84378abcd25c2416b1405
+  AGORA_APP_ID: 7fe2edd3e13540fc843628754f267d83
+  AWS_ACCESS_KEY_ID: AKIATG5CPDBLCOEIHLNH
+  AWS_S3_BUCKET_NAME: raven-live-stream-bucket
+  AWS_SECRET_ACCESS_KEY: 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
+  CHAT_SECRET: e5pha5u9n35bwwf77smejressbarkqse8s9b7ght737g2xa57kzx7ktkma7a8bsf
+  CLOUDINARY_API_KEY: "214761219822439"
+  CLOUDINARY_API_SECRET: jkwK2uhTYd_8EsL0_LlMDonkbhw
+  CLOUDINARY_CLOUD_NAME: www-ravenlivestream-com
+  REDIS_PORT: "6379"
+  REDIS_HOST: raven-prod-cluster.btnbdp.ng.0001.use1.cache.amazonaws.com
+  API_PUBLIC_KEY: -----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1HsCsV3YV1eiq3Ieg+6J\nIcyVnQfUPSqznhDw6TBDHAhZGBbb2zYDXP9wknBMbxnVBNI+wYBtEjMIMxgP1sAo\nkJDA+gdYpWtd6wbdjjcw60nEOzhX5Z85RHHtZIQHrwLj3o8xA4RScbQTz3Oo5Bir\nSbTh5XESFjP71w8dKaJt6mrLYfr1DgTmBYKJC2Kj3gKp03cMA3b6B+KizrOAxiwz\nHOBUD3R43RDLwureFz4qMlvPjbC3uYgOkbSLTwaXEO1kgzN95xgDzBo9HrOMsFu/\nyrODgddhSS8RAUnWRBdRLY7bydzTXM8G2rjm0MECvF+QYs292o8ohesVENwZmy3N\njQIDAQAB\n-----END PUBLIC KEY-----\n
+  SMTP_PASS_KEY: W2MlaPlFEAWIMQTnODIDPDRXNtvUBs5uqploFEvQzVFQ
+  HOST_LIVE_REV_RATE: "0.9"
+  HOST_TICKET_REV_RATE: "0.7"
+  MONGO_DEV_URI: mongodb+srv://viola:viola@ravencluster-mq0ws.mongodb.net/raven_dev?retryWrites=true&w=majority
+  MONGO_PROD_URI: mongodb+srv://viola:viola@raven-livestream.uuovl.mongodb.net/raven_livestream?retryWrites=true&w=majority
+  PAYOUT_EMAIL: contact@ravenlivestream.com
+  PAYSTACK_PUBLIC_KEY: pk_live_515c73d054a9a2f33a65967989ac334541a641ba
+  PAYSTACK_SECRET_KEY: sk_live_8911f2931caeb6d5a8ffeb18de9958caf5980062
+  RAVE_PUBLIC_KEY: FLWPUBK-d5ab8c05c575682386a0ce212d05e597-X
+  RAVE_SECRET_HASH: 9f78df469af8d199ee0ad3f9c1c971ebfee10d56ada105d9fe813ca1d9d023b0d083b0ce004f27637eb35c14f56dd38f652c8cb5fbcce018a8c65cc646918c9c
+  RAVE_SECRET_KEY: FLWSECK-fd6133c2593ab1b53702c4194164bdb2-X
+  SECRET: d3ae54d5189facc3afe56a4980f91b15a8f577268166dcd7c736cbe281e30926c3fd346aa4fbc2c4394ad869cfea43764bca8c8c130c0bacc70844659105b88d
+  SMTP_SERVER: "https://smtp.ravenlivestream-api.com/mail/send"
+  USD_RATE: "485"
+  INFURA_PROJECT_ID: cc0a64b4d2b84bef9f2079d61ef6b498
+  CONTRACT_ADDRESS: "0xE6b64179903C8567705985caC51D0A4754F9e127"
+  PROVIDER_ADDRESS: https://bsc-mainnet-rpc.allthatnode.com
+  MONGO_ATLAS_PUBLIC_KEY: nkcekbxm
+  MONGO_ATLAS_PRIVATE_KEY: 859e195a-c49a-4f94-bf27-96e64f004831
+  MONGO_ATLAS_PROJECT_ID: 602045c7a1838475f99c46d2
+  FIREBASE_PROJECT_ID: raven-84182
+  FIREBASE_PRIVATE_KEY_ID: 6198425877fbf68bdaa93845f85ed104e2da4ae8
+  FIREBASE_PRIVATE_KEY: -----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQChvWiGiqsLjd4t\ne9YgHgHStgfThQ/1A6cKLtNfsMx/tcqgHHabqPlBnITABl79+hAjYnz7nRw0/u5f\nwcUWO0Nn8365dST2TqMbU/ws3fyeFjWF/XZ9STX/sENAFqOGlAuDV0+iJ0VydDw4\nMKmcSIBQs04ohffvyUMnPfeBjR7pAxz04OSSEUODmkQ1rjaNHsPVvfNdpRFhxQM3\nS5MYi7WUDLJvHV1ljZHvzxULOrtL9sd2TvWF7TzdzeT07zgemklDbft7BR7Shse+\nus9iTHqm5gd/Dod17Ws0/ryuYYp7jd05f6bZEIdJLZo+JYuF6eTuIoUNmdR73KeF\nLKh+Je53AgMBAAECggEAEkBhALm6NooSVdihH6uzMfd3p59e3xvD6ErDcItvcEPv\n8yRzH/qv8f77Hf46Dvf+hTeyeeRPUA2qkaS4nFsgrqTUGpKFEsRp9IYEMX31aVOB\nQ7cH/Xha/xkBZcSIPIINUIt0QYyj8hf6ya54HVozHKg3PCxt/6GbEd0UxopJwCp7\nC4+HxgkhyepXvTFVIpmmXDq6HqT5+HK3kOQh2dEQ010Aauo7ltklRs/XBqzo0xPq\nyZmtZ4KT2XPlvCZcM1PeMLxGOJ5bBYHfbMwOx8vdimWFoQYpNM4KNuH/desbmAlR\n+fxKe7469rdVEyU0d2VEKtFVWRONw6nYp/1X4tUbKQKBgQDkBEUJl8l9alUqEQV+\nTmc23/GyTYD5MwvUMympPvu63P+BPsmfiXjMLp8VQglSvFh/tqF7JM/FawrzsAUy\n9tYggaPO6WxhHVYzR63K7hBm4NcShNUtCcPr6km429vr56uWqLFjLKJUKj7oWFaw\n7o33ckx3zaEwHBevtTEPpF1r6QKBgQC1luHn54EwoHCBOjRvNVOHs+dqVFAsawAB\nvDG948bkY/ICVuI8no+efBLFmLLe9tngMggaBS00SvrFX/rzznAuWAXaXDvlpEQx\nKggZazrEejsOb4bDXGu3XzE0N8mjhdDLVzadQfZwkMF1ofOhDnsUXxrp8e8GQnaj\nmSbRqozrXwKBgHPkb6qGiZTDHPI6oI4oD3HmtRQpLGp8tYBvWLd7GbtKZFsurI/3\n8XvmHllRrSduL5UKIF1Uwn3XAEQHrTzQFNmEytt57OoXXR7HSeAgzBleIjJ5bVhs\n5DXeaQYaSVdH8wCqUS7VGtSofDzf2YAoX+PrJk6mJ00qmidmcr8+jXUxAoGAAc56\neOAovN8bv21g0CprplH332rvUUHPQjUpGYaGmAcWhUdwAMJjE2SQmz6lqOozyLM2\nuWuLw5VrYUNPL9XB7/QYOs/oGKTFuOd+JSKX9xRwOfiKEq98stpTlv1nGCVgqmU3\nueDKHtyR0CXIUrXeK5m2ntU1V46Zt47yf+t+c2kCgYBIoX4FdABXzZM/aVrsODjJ\nVQvg6YV7TIpabBaJa6olgs71MqSY7VGzaGhIDxuYN78z8qk7tMgjybOuUeZWclen\nBKKwwkO2BdllTsJmhuWMQL/1KxrM3OgT0SXHfSXZPDW0HylElaMvxjFQnOSOywAV\nVFT7U+ssFNFkh3Chi4UNGw==\n-----END PRIVATE KEY-----\n
+  FIREBASE_CLIENT_EMAIL: firebase-adminsdk-1hz38@raven-84182.iam.gserviceaccount.com
+  FIREBASE_CLIENT_ID: "102757754515271458621"
+  FIREBASE_CLIENT_CERT_URL: https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-1hz38%40raven-84182.iam.gserviceaccount.com
+  FIREBASE_DB_URL: https://raven-84182.firebaseio.com
+  GOLIVE_POSTER: https://res.cloudinary.com/www-ravenlivestream-com/image/upload/v1679227181/Frame_3040-2_yjncjj.png
