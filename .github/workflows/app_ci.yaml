@@ -17,7 +17,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: /sysmon-app
+        # working-directory: /sysmon-app
   
     steps:
     # Checkout the repository to the GitHub Actions runner
@@ -31,18 +31,20 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - name: Generate tag
-      run: |
-        # TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
+    # - name: Generate tag
+    #   run: |
+    #     # TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
 
-        # TAG="${{ github.run_number }}"
-        # echo "the generated tag is $TAG"
-        echo "we are at"
-        pwd
+    #     # TAG="${{ github.run_number }}"
+    #     # echo "the generated tag is $TAG"
+    #     echo "we are at"
+    #     pwd
  
     - name: Build the image and push it to ACR
       uses: docker/build-push-action@v5
+      # working-directory: sysmon-app
       with:
+        context: /sysmon-app/.
         push: true
         tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.REGISTRY_USERNAME }}:${{ github.run_number }}
         # file: Dockerfile
