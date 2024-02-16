@@ -3,18 +3,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "bg-svc"
+  name: "sysmon"
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: git@github.com:Raven-Livestream/infrastructure.git
-    targetRevision: HEAD
-    path: kubernetes/argocd-apps/bg-svc/base
+    repoURL: git@github.com:nobleman97/perizer-app.git
+    targetRevision: develop
+    path: kubernetes/argocd-apps/sysmon/base
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: 
+    namespace: sysmon
   
   syncPolicy:
     syncOptions:

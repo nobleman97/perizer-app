@@ -2,29 +2,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bg-svc
-  namespace: raven
+  name: sysmon
+  namespace: sysmon
   labels:
-    app: bg-svc
+    app: sysmon
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bg-svc
+      app: sysmon
   template:
     metadata:
       labels:
-        app: bg-svc
+        app: sysmon
     spec:
       containers:
-      - name: bg-svc
-        image: ravendvd3232.azurecr.io/bg-svc:latest
+      - name: sysmon
+        image: sysmon.azurecr.io/sysmon:8
         ports:
-        - name: bg-svc
-          containerPort: 8080
-        envFrom:
-          - configMapRef:
-              name: bg-svc-configmap
+        - name: sysmon
+          containerPort: 5000
+        # envFrom:
+        #   - configMapRef:
+        #       name: sysmon-configmap
         resources:
           requests:
             cpu: 500m

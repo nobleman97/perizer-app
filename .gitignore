@@ -44,5 +44,5 @@ terraform/.terraform/*
 *.tfstate*
 
 terraform/plan
-
+*venv
 terraform/.terraform/*
