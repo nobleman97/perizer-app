@@ -6,13 +6,13 @@ variable "rg_location" {
   type = string
 }
 
-variable "azuread_app_name" {
-  type = string
-}
+# variable "azuread_app_name" {
+#   type = string
+# }
 
-variable "kv_name" {
-  type = string
-}
+# variable "kv_name" {
+#   type = string
+# }
 
 #    ------- AKS -------
 
@@ -37,4 +37,19 @@ variable "dns-prefix" {
 
 variable "http_application_routing_enabled" {
   type = bool
+}
+
+variable "vm_size" {
+  type = string
+}
+
+#   ---- AKS -----
+variable "acrs" {
+  type = map(object({
+    name = string
+    location = string
+    rg_name = string
+    sku = string
+    admin_enabled = bool
+  }))
 }

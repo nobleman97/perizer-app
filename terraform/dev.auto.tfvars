@@ -1,24 +1,34 @@
-rg_name  = "rg-k8s-dev-eastus2-1"
-rg_location = "eastus2"
+rg_name  = "rg-k8s-dev-eastus-1"
+rg_location = "eastus"
 
-azuread_app_name = "spn-k8s-dev-eastus2-1"
 
-kv_name = "raven-k8s-key-vault"
+aks-name = "aks-stream-dev-eastus-1"
 
-aks-name = "aks-stream-dev-eastus2-1"
+ssh-public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDTaWnGPWsl6ohdw3uAGx5pFRnLCMuB+EpMgJAaZsOkS/mP/MD8iGWgJ5ZWr2J+QbfsPoPvc5QbKcTTp5E2Tjcbs0ge5kB+uvJSDxuEzCcQexpmAsMFvwsPQm6O8dCFNVGPc31UjyGfFWShbaIoI9z6sOGpP6ST6Q89rquQmMEu4esbyG87V0Q+VzjV1TIPJR2qUJKwZNMVppFfAdF4V87x0YykswftNqu/v65Pkdhi7WbbWdRuMyI/C6ci5UFf8FoXTOtc5ibIOi8Z0YbdwjaTtSFBvavFbBMK+Tt6g3psTgcEAMngnKqsrIeIlCICZ4mj3J0TU3O+PcK4VftCpX3fHzfgCBU/mSwx9abOFmxQ3U45OXFOhR/iIfRgCJR+i+nljaBqC6ctkMHydrVtDiJi+Uw4M6VuRV4pp5P/bFjCuVd8IGJIeA9/fN9UFPZ9YzYBag7Hsi7xXlNurR/mu5ZdwQOlRPaqw97UxiJPNd9EzPsILk2aBnBg32wAGGxbQxM= root@cfaa7e601541"
 
-ssh-public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCvqGKPqbSFWD4u+b+Ym93kRTgwlCpPvav7FyToUks3eQwG86FjoBaykmEVZizXxYPzI2ux2B+UcV4LGrUzqeVDKmPU77W6utlRsZFihAqkdWNGb/IQVHiqTpnyRaPolfBodrFUnDLosrzSgJgD6vsa4EOb17Zs7D/fmmO1nd4a6b8zuDXgrgu0Y67QKYZ41FsxXLINE7bdbOSj5idPyAWI86zsPrStqGoezc6ZT/F95gOP7TGljGGhuVAxmNJ0Y6qtHhZ2iNlL2FCpiUytjgDSiYvzHOm0MQKI1WdWixUN4MJTCA/9fBK42hgrTve4sXhzUGo4JBtZbumged/UZ35uGtZLc/ZZDZ9q5wBW3tuki4yJ8CQGRU9EAC1let4XSO+RQ1/si3HdFfyg6f2WXPiQaC8bhctXfSUVTTRDz3RiPyNGEPk0JdO5JW9EkfqSaU+fSXCGIX8XRC743YBeO/APjt+vGka0odsTO5eV5okjXo6djZ+gzauNTMSyQffiHpk= root@19ad433f76c0"
+# dns-names = {
+#   "com" = {
+#     name = "ravenlivestream-api.com"
+#   }
 
-dns-names = {
-  "com" = {
-    name = "ravenlivestream-api.com"
-  }
-
-  "website" = {
-    name = "ravenlivestream-api.website"
-  }
-}
+#   "website" = {
+#     name = "ravenlivestream-api.website"
+#   }
+# }
 
 dns-prefix = "raven-k8s"
 
 http_application_routing_enabled = false
+
+vm_size = "Standard_DS3_v2"
+
+
+acrs = {
+  "main" = {
+    name = "sysmon"
+    sku = "Standard"
+    location = "eastus"
+    rg_name = "rg-k8s-dev-eastus-1"
+    admin_enabled = true
+  }
+}

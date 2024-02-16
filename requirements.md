@@ -17,7 +17,7 @@ can adapt and work with the modern development tools and methodologies that defi
     Create a straightforward architecture design for deploying your application on Azure, including a diagram of your setup.
 
 - **Provision Infrastructure with Terraform:**
-    Write Terraform code using modules to set up the required infrastructure on Azure, focusing on an Azure Kubernetes Service (AKS)
+    Write Terraform code using modules to set up the required infrastructure on Azure, focusing on an Azure Kubernetes Service (AKS) 
     cluster.
 
 - **Set Up CI/CD with GitHub Actions:**

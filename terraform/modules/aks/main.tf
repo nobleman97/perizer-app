@@ -20,7 +20,7 @@ resource "azurerm_kubernetes_cluster" "main" {
     max_count = 3
     os_disk_size_gb = 50
     type = "VirtualMachineScaleSets"
-    vm_size    = "Standard_D2_v3"
+    vm_size    = var.vm_size #"Standard_DS3_v2"
     zones = [1]
     max_pods = 110
     
@@ -30,6 +30,10 @@ resource "azurerm_kubernetes_cluster" "main" {
       "nodepool-type"    = "system"
       "environment"      = "dev"
       "nodepools"       = "linux"
+    }
+
+    upgrade_settings {
+    max_surge = "10%"
     }
   }
 
@@ -58,6 +62,8 @@ resource "azurerm_kubernetes_cluster" "main" {
       network_plugin = "azure"
       load_balancer_sku = "standard"
   }
+
+
 
 
 

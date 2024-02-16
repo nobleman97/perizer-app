@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sysmon
+  namespace: sysmon
+  labels:
+    app: sysmon
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sysmon
+  template:
+    metadata:
+      labels:
+        app: sysmon
+    spec:
+      containers:
+      - name: sysmon
+        image: sysmon.azurecr.io/sysmon:8
+        ports:
+        - name: sysmon
+          containerPort: 5000
+        # envFrom:
+        #   - configMapRef:
+        #       name: sysmon-configmap
+        resources:
+          requests:
+            cpu: 500m
+          limits:
+            cpu: 1000m
+        

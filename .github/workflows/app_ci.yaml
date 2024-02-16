@@ -1,0 +1,50 @@
+name: docker_build_push_acr
+ 
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+ 
+jobs:
+  docker_build_push_acr:
+    name: 'Docker Build and Push to ACR'
+    runs-on: ubuntu-latest
+    environment: dev
+  
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+        # working-directory: /sysmon-app
+  
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: Checkout
+      uses: actions/checkout@v4
+  
+    - name: 'Docker Login'
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ secrets.REGISTRY_LOGIN_SERVER }}
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    # - name: Generate tag
+    #   run: |
+    #     # TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
+
+    #     # TAG="${{ github.run_number }}"
+    #     # echo "the generated tag is $TAG"
+    #     echo "we are at"
+    #     pwd
+ 
+    - name: Build the image and push it to ACR
+      uses: docker/build-push-action@v5
+      # working-directory: sysmon-app
+      with:
+        context: ./sysmon-app
+        push: true
+        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.REGISTRY_USERNAME }}:${{ github.run_number }}
+        # file: Dockerfile

@@ -1,0 +1,25 @@
+
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: "sysmon"
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:nobleman97/perizer-app.git
+    targetRevision: develop
+    path: kubernetes/argocd-apps/sysmon/base
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: sysmon
+  
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true
