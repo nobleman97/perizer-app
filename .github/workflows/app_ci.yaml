@@ -33,11 +33,12 @@ jobs:
 
     - name: Generate tag
       run: |
-        TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
+        # TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
 
+        TAG="${{ github.run_number }}"
         echo "the generated tag is $TAG"
  
-    - name: Build the frontend image and push it to ACR
+    - name: Build the image and push it to ACR
       uses: docker/build-push-action@v5
       with:
         push: true
