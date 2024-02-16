@@ -35,5 +35,13 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+
 terraform/.terraform/*
 /terraform/plan
+
+*.lock.hcl
+*.tfstate*
+
+terraform/plan
+
