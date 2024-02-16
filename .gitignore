@@ -45,3 +45,4 @@ terraform/.terraform/*
 
 terraform/plan
 
+terraform/.terraform/*
