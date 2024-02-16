@@ -32,10 +32,10 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - name: Generate tag
-        run: |
-          TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
+      run: |
+        TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
 
-          echo "the generated tag is $TAG"
+        echo "the generated tag is $TAG"
  
     - name: Build the frontend image and push it to ACR
       uses: docker/build-push-action@v5
