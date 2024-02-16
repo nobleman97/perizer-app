@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: sysmon
-        image: sysmon.azurecr.io/sysmon:8
+        image: sysmon.azurecr.io/sysmon:10
         ports:
         - name: sysmon
           containerPort: 5000
