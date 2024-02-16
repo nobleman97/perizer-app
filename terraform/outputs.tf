@@ -16,3 +16,8 @@ output "main_acr_password" {
   value = module.main_acr["main"].password
   sensitive = true
 }
+
+output "main_acr_login_server" {
+  value = module.main_acr["main"].login_server
+
+}
