@@ -31,16 +31,16 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
-    - name: Generate tag
-      run: |
-        # TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
+    # - name: Generate tag
+    #   run: |
+    #     # TAG="${{ github.run_number }}-$(date '+%d%m%y-%H%M%S')"
 
-        TAG="${{ github.run_number }}"
-        echo "the generated tag is $TAG"
+    #     TAG="${{ github.run_number }}"
+    #     echo "the generated tag is $TAG"
  
     - name: Build the image and push it to ACR
       uses: docker/build-push-action@v5
       with:
         push: true
-        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.REGISTRY_USERNAME }}:$TAG
+        tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.REGISTRY_USERNAME }}:${{ github.run_number }}
         file: aspnet-core-dotnet-core/Dockerfile
