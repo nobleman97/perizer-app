@@ -36,3 +36,4 @@
 ehthumbs.db
 Thumbs.db
 terraform/.terraform/*
+/terraform/plan

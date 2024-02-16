@@ -18,14 +18,12 @@ variable "dns-prefix" {
 variable "http_application_routing_enabled" {
   type = bool
 }
-# variable "client_id" {
-#   type = string
-# }
 
-# variable "client_secret" {
-#   type = string
-# }
 
 variable "ssh_public_key" {
+  type = string
+}
+
+variable "vm_size" {
   type = string
 }

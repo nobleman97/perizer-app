@@ -7,3 +7,12 @@ output "kube_config" {
 output "kubelet_identity" {
   value = module.aks.vmss_user_identity
 }
+
+output "main_acr_username" {
+  value = module.main_acr["main"].username
+}
+
+output "main_acr_password" {
+  value = module.main_acr["main"].password
+  sensitive = true
+}
