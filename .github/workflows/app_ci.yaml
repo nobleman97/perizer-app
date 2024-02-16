@@ -44,7 +44,7 @@ jobs:
       uses: docker/build-push-action@v5
       # working-directory: sysmon-app
       with:
-        context: /sysmon-app/.
+        context: ./sysmon-app
         push: true
         tags: ${{ secrets.REGISTRY_LOGIN_SERVER }}/${{ secrets.REGISTRY_USERNAME }}:${{ github.run_number }}
         # file: Dockerfile
