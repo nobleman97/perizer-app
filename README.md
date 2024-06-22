@@ -105,6 +105,4 @@ cd into the terraform folder and run ```terraform destroy``` to take down the in
 
 
 ## Reflections
-- While working on this project, I got to learn  how service principals and managed identities work and when to use which.
-
-- A major difficulty I experienced was exposing the service as a LoadBalancer. I set the type to LoadBalancer, but for some reason it remained as type NodePort. I had to redeploy the application, but it later worked.
+- While working on this project, I got how to better utilize service principals and managed identities and when to use which.
